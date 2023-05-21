@@ -6,14 +6,14 @@
 #    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 19:11:30 by isojo-go          #+#    #+#              #
-#    Updated: 2023/05/20 19:38:06 by isojo-go         ###   ########.fr        #
+#    Updated: 2023/05/21 11:40:06 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # --- Makefile structure ---
 
 ## Program Name:
-NAME	=	agenda
+NAME	=	main
 EXT		=	.cpp
 
 ## Folder Structure:
