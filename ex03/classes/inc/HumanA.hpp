@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/21 16:27:50 by isojo-go          #+#    #+#             */
-/*   Updated: 2023/05/23 00:38:33 by isojo-go         ###   ########.fr       */
+/*   Created: 2023/05/21 18:09:38 by isojo-go          #+#    #+#             */
+/*   Updated: 2023/05/23 00:32:47 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-	#define ZOMBIE_HPP
+#ifndef HUMANA_HPP
+	#define HUMANA_HPP
+	#ifndef DEBUG
+		#define DEBUG 0
+	#endif
 	#include <string>
 	#include <iostream>
+	#include "../inc/Weapon.hpp"
 
-	class	Zombie
+	class HumanA
 	{
 		public:
-			~Zombie(void);
-			Zombie(void);
-			Zombie(std::string name);
+			HumanA(std::string name, Weapon& newWeapon);
+			~HumanA(void);
 
-			void			announce(void);
-			static Zombie*	newZombie(std::string name);
-			static void		randomChump(std::string name);
+			void	attack(void);
 
 		private:
 			std::string	_name;
+			Weapon&		_refWeapon;
 	};
 
-#endif // ZOMBIE_HPP
+#endif // HUMANA_HPP

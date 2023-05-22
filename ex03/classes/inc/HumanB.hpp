@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/21 16:27:50 by isojo-go          #+#    #+#             */
-/*   Updated: 2023/05/23 00:38:33 by isojo-go         ###   ########.fr       */
+/*   Created: 2023/05/21 18:09:31 by isojo-go          #+#    #+#             */
+/*   Updated: 2023/05/23 00:06:27 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-	#define ZOMBIE_HPP
+#ifndef HUMANB_HPP
+	#define HUMANB_HPP
+	#ifndef DEBUG
+		#define DEBUG 0
+	#endif
 	#include <string>
 	#include <iostream>
+	#include "../inc/Weapon.hpp"
 
-	class	Zombie
+	class HumanB
 	{
 		public:
-			~Zombie(void);
-			Zombie(void);
-			Zombie(std::string name);
+			HumanB(std::string name);
+			~HumanB(void);
 
-			void			announce(void);
-			static Zombie*	newZombie(std::string name);
-			static void		randomChump(std::string name);
+			void	attack(void);
+			void	setWeapon(Weapon& newWeapon);
 
 		private:
 			std::string	_name;
+			Weapon*		_currentWeapon;
 	};
 
-#endif // ZOMBIE_HPP
+#endif // HUMANB_HPP

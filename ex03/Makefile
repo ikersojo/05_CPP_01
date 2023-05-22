@@ -6,14 +6,14 @@
 #    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 19:11:30 by isojo-go          #+#    #+#              #
-#    Updated: 2023/05/20 19:38:06 by isojo-go         ###   ########.fr        #
+#    Updated: 2023/05/23 00:34:54 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # --- Makefile structure ---
 
 ## Program Name:
-NAME	=	agenda
+NAME	=	main
 EXT		=	.cpp
 
 ## Folder Structure:
@@ -37,6 +37,7 @@ OBJ		=	$(SRC:$(SRCDIR)/%$(EXT)=$(OBJDIR)/%.o)
 CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	rm -rf
+DEBUG		=	#-DDEBUG=1
 
 # *************************************************************************** #
 
@@ -61,14 +62,15 @@ all:		$(NAME)
 
 $(NAME):	libclasses $(OBJ)
 			@mkdir -p $(BINDIR)
-			@$(CC) $(CFLAGS) $(OBJ) $(LIBS) $(HEADERS) -o ./$(BINDIR)/$(NAME)
+			@$(CC) $(DEBUG) $(CFLAGS) $(OBJ) $(LIBS) $(HEADERS) -o ./$(BINDIR)/$(NAME)
 			@echo "$(GREEN)$(NAME) compiled!$(DEF_COLOR)"
 
 $(OBJDIR)/%.o: $(SRCDIR)/%$(EXT)
 			@mkdir -p $(OBJDIR)
 			@printf "$(BLUE)Compiling: $< ...$(DEF_COLOR)"
-			@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
+			@$(CC) $(DEBUG) $(CFLAGS) -o $@ -c $< $(HEADERS)
 			@echo "$(GREEN)Done!$(DEF_COLOR)"
+
 
 libclasses:
 			@$(MAKE) -C $(LIBCLASS)

@@ -6,7 +6,7 @@
 #    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 19:11:30 by isojo-go          #+#    #+#              #
-#    Updated: 2023/05/21 16:29:26 by isojo-go         ###   ########.fr        #
+#    Updated: 2023/05/23 00:39:14 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,6 @@ HEADERS	=	-I ./inc
 ## Source / Object Files:
 SRC		=	$(wildcard $(SRCDIR)/*$(EXT))
 OBJ		=	$(SRC:$(SRCDIR)/%$(EXT)=$(OBJDIR)/%.o)
-
 
 ## Compilation flags:
 CC			=	c++
