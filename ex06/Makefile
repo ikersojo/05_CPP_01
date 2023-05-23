@@ -6,14 +6,14 @@
 #    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 19:11:30 by isojo-go          #+#    #+#              #
-#    Updated: 2023/05/23 00:34:54 by isojo-go         ###   ########.fr        #
+#    Updated: 2023/05/23 19:53:57 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # --- Makefile structure ---
 
 ## Program Name:
-NAME	=	main
+NAME	=	harlFilter
 EXT		=	.cpp
 
 ## Folder Structure:
