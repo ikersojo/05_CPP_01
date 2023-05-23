@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:13:18 by isojo-go          #+#    #+#             */
-/*   Updated: 2023/05/23 19:39:49 by isojo-go         ###   ########.fr       */
+/*   Updated: 2023/05/23 19:38:00 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,3 +68,50 @@ void	Harl::error(void)
 {
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
+
+
+/*
+void	Harl::complain(std::string level)
+{
+	void    (Harl::*functionPTRS[])( void ) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	std::string complains[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
+	for (int i = 0; i < 4; i++)
+	{
+		if (complains[i] == level)
+			(this->*functionPTRS[i])();
+	}
+}
+
+
+
+	int	i = 0;
+	std::string command[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	while (i < 4) {
+		if (level.compare(command[i]) == 0)
+			break;
+		i++;
+	}
+	if (i < 4) {
+		typedef void (Harl::*fptr)( void );
+		fptr funciones[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+		(this->*funciones[i])();
+	}
+
+
+void Harl::complain(std::string level) {
+  void (Harl::*functions[4])() = {&Harl::debug, &Harl::info, &Harl::warning,
+                                   &Harl::error};
+  std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
+  int i;
+  for (i = 0; i < 4; i++) {
+    if (level == levels[i]) {
+      (this->*functions[i])();
+      break;
+    }
+  }
+  if (i == 4) std::cout << "No matching level!" << std::endl;
+}
+
+*/
