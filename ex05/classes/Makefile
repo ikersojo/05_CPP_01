@@ -6,7 +6,7 @@
 #    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 19:11:30 by isojo-go          #+#    #+#              #
-#    Updated: 2023/05/20 19:29:13 by isojo-go         ###   ########.fr        #
+#    Updated: 2023/05/23 00:34:54 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,12 +30,12 @@ HEADERS	=	-I ./inc
 SRC		=	$(wildcard $(SRCDIR)/*$(EXT))
 OBJ		=	$(SRC:$(SRCDIR)/%$(EXT)=$(OBJDIR)/%.o)
 
-
 ## Compilation flags:
 CC			=	c++
 AR			=	ar rcs
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	rm -rf
+DEBUG		=	#-DDEBUG=1
 
 # *************************************************************************** #
 
@@ -65,7 +65,7 @@ $(NAME):	$(OBJ)
 $(OBJDIR)/%.o: $(SRCDIR)/%$(EXT)
 			@mkdir -p $(OBJDIR)
 			@printf "$(BLUE)Compiling: $< ...$(DEF_COLOR)"
-			@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
+			@$(CC) $(DEBUG) $(CFLAGS) -o $@ -c $< $(HEADERS)
 			@echo "$(GREEN)Done!$(DEF_COLOR)"
 
 clean:
